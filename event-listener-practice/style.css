@@ -1,0 +1,16 @@
+*{
+    background-color: rgb(73, 73, 73);
+}
+
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#square{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+}

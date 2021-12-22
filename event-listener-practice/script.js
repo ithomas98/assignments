@@ -7,7 +7,6 @@ square.addEventListener("dblclick", toGreen)
 document.addEventListener("wheel", toOrange)
 
 document.addEventListener("keydown", e=>{
-    console.log(e.key)
     if(e.key == "b"){
         toBlue()
     }else if(e.key == "r"){

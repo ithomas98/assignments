@@ -11,7 +11,7 @@ just fix the existing ones.
 
 var enemies = ["Lex", "Batman", "Darkseid", "Brainiac", "General Zod", "Doomsday"];
 
-function pickWinner(isKryptonite, enemyName){
+function pickWinner(isKryptonite, enemyName) {
     if (!isKryptonite) {
         return "Superman beats " + enemyName + ", of course";
     }
@@ -23,11 +23,11 @@ function pickWinner(isKryptonite, enemyName){
 
 for (var i = 0; i < enemies.length; i++) {
     var isKryptonite
-        if (i % 2 === 0) {
-            isKryptonite = true;
-        } else {
-            isKryptonite = false;
-        }
+    if (i % 2 === 0) {
+        isKryptonite = true;
+    } else {
+        isKryptonite = false;
+    }
     console.log(pickWinner(isKryptonite, enemies[i]));
 }
 

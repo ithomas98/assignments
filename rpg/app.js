@@ -57,7 +57,7 @@ const warlock = {
 const enemies = [rat, goblin, bandit, bear, giant, dragon, warlock]
 
 //Items
-const items = ["Medallion", "Tunic", "Hat", "Glove", "Monocle", "Mask", "Ring", "Toe ring", "Carrot", "Signed Cook Book", "Dusty Book", "Toad", "Water Bottle", "Lantern", "Walking Stick", "Carton of Eggnog", "Turkey Feather", "Lucky Totem", "Compass", "Firestarter", "Encyclopedia", "Jar of Jam", "Sock", "Cloak", "Torch", "Croissant"]
+const items = ["Medallion", "Tunic", "Hat", "Glove", "Monocle", "Mask", "Ring", "Toe ring", "Carrot", "Signed Cook Book", "Dusty Book", "Toad", "Water Bottle", "Lantern", "Walking Stick", "Carton of Eggnog", "Turkey Feather", "Lucky Totem", "Compass", "Firestarter", "Map", "Jar of Jam", "Sock", "Cloak", "Torch", "Croissant", "Pouch", "Harmonica"]
 
 //Encounters
 const encounters = [
@@ -66,22 +66,22 @@ const encounters = [
         name: "gift",
         type: "addItem",
         msg: "You happen upon some friendly villagers. They offer you a ",
-        num: Math.floor(Math.random() * items.length)
+        num: items.length
     }, {
         name: "treasureCrypt",
         type: "addItem",
         msg: "You find an old treasure chest in a crypt and find a ",
-        num: Math.floor(Math.random() * items.length)
+        num: items.length
     }, {
         name: "treasureRuins",
         type: "addItem",
         msg: "While taking shelter in some ancient ruins, you find a secret treasure room and pick up a ",
-        num: Math.floor(Math.random() * items.length)
+        num: items.length
     }, {
         name: "tavernWin",
         type: "addItem",
         msg: "You gamble in a tavern and win a ",
-        num: Math.floor(Math.random() * items.length)
+        num: items.length
     },
 
     //Encounters that modify player health
@@ -89,22 +89,17 @@ const encounters = [
         name: "healer",
         type: "modifyHealth",
         msg: "A wandering healer crosses your path! They tend to your wounds and your health increases by ",
-        num: Math.floor(Math.random() * health + 1)
+        num: 10
     }, {
         name: "camp",
         type: "modifyHealth",
         msg: "You pitch a tent and camp for the night. You rest and your health increases by ",
-        num: Math.floor(Math.random() * 5 + 1)
-    }, {
-        name: "fall",
-        type: "modifyHealth",
-        msg: "You stumble into a massive pit and your health decreases by ",
-        num: Math.floor(Math.random() * health / 2) * -1
+        num: 5
     }, {
         name: "hunt",
         type: "modifyHealth",
         msg: "You spend the afternoon hunting and kill a pigeon. The hot meal heals you by ",
-        num: Math.floor(Math.random() * 5 + 1)
+        num: 5
     },
 
     //Encounters that modify player level
@@ -112,17 +107,12 @@ const encounters = [
         name: "oldMan",
         type: "modifyLevel",
         msg: "At the top of a hill you find a wise old man. He imparts his secrets and you level up by ",
-        num: Math.floor(Math.random() * level + 1)
+        num: 5
     }, {
         name: "library",
         type: "modifyLevel",
         msg: "You stumble across an old library full of ancient wisdom and level up by ",
-        num: Math.floor(Math.random() * level + 1)
-    }, {
-        name: "drunk",
-        type: "modifyLevel",
-        msg: "You drink too much at a tavern and wake up in a field. Your level decreases by ",
-        num: Math.floor(Math.random() * level / 2) * -1
+        num: 5
     },
     //Encounters that just say something
     {
@@ -137,6 +127,10 @@ const encounters = [
         name: "goodOmen",
         type: "message",
         msg: "A leaf falls on your head. A good omen!"
+    }, {
+        name: "drunk",
+        type: "message",
+        msg: "You drink too much at a tavern and wake up in a ditch"
     }
 ]
 
@@ -377,6 +371,7 @@ function randomEncounter() {
     //Pick random event
     let encounterIndex = Math.floor(Math.random() * encounters.length);
     let encounter = encounters[encounterIndex];
+    let randomNum = Math.floor(Math.random() * encounter.num)
 
     if (encounter.type == "message") {
         //Print message
@@ -384,18 +379,18 @@ function randomEncounter() {
 
     } else if (encounter.type == "addItem") {
         //Add item to inventory and print message
-        console.log("\x1b[33m%s\x1b[0m", encounter.msg + items[encounter.num] + ".")
-        inventoryContent.push("-" + items[encounter.num])
+        console.log("\x1b[33m%s\x1b[0m", encounter.msg + items[randomNum] + ".")
+        inventoryContent.push("-" + items[randomNum])
 
     } else if (encounter.type == "modifyHealth") {
         //Modify health and print message
-        console.log("\x1b[33m%s\x1b[0m", encounter.msg + encounter.num + ".")
-        health += encounter.num
+        console.log("\x1b[33m%s\x1b[0m", encounter.msg + (randomNum + 1) + ".")
+        health += (randomNum + 1)
 
     } else if (encounter.type == "modifyLevel") {
         //Modify level and print message
-        console.log("\x1b[33m%s\x1b[0m", encounter.msg + encounter.num + ".")
-        level += encounter.num
+        console.log("\x1b[33m%s\x1b[0m", encounter.msg + (randomNum + 1) + ".")
+        level += (randomNum + 1)
     }
 
     //Prompt player to press button to continue

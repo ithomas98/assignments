@@ -190,7 +190,7 @@ function walk() {
     }
 
     //Determine chance of random encounter
-    if (encounterChance < .5) {
+    if (encounterChance < .1) {
         randomEncounter()
     }
 
@@ -202,7 +202,7 @@ function startFight(enemy) {
     //Create enemy and set as current
     currentEnemy = Object.create(enemy)
     currentEnemy.health = enemy.health
-    console.log("\x1b[33m%s\x1b[0m", "A " + enemy.name + " appears!")
+    console.log("\x1b[33m%s\x1b[0m", `A ${enemy.name} appears!`)
 
     //Prompt player to press button to continue
     console.log("Press [f] to continue")
@@ -224,11 +224,11 @@ function attack() {
     //Give fight options and determine outcome of attack
     if (currentEnemy.health > 0) {
         console.log("\nPress [a] to attack or [f] to flee\n")
-        console.log("You did " + damage + " damage to " + currentEnemy.name + "!")
+        console.log(`You did ${damage} damage to ${currentEnemy.name} !`)
         enemyAttack()
     }
     else {
-        console.log("\x1b[32m%s\x1b[0m", "\nYou killed the " + currentEnemy.name + "!")
+        console.log("\x1b[32m%s\x1b[0m", `\nYou killed the ${currentEnemy.name} !`)
         giveReward()
         console.log("Press [f] to continue")
 
@@ -249,7 +249,7 @@ function flee() {
     if (fleeChance > .5) {
         inFight = false
         printFightInfo()
-        console.log("\x1b[32m%s\x1b[0m", "\nYou escaped from the " + currentEnemy.name + "!\n")
+        console.log("\x1b[32m%s\x1b[0m", `\nYou escaped from the ${currentEnemy.name} !\n`)
 
         //Add successful flee to final stats
         battlesFled++
@@ -274,7 +274,7 @@ function flee() {
         if (health > 0) {
             printFightInfo()
             console.log("\nPress [a] to attack or [f] to flee")
-            console.log("\nYou failed to escape and took " + fleeDamage + " damage!")
+            console.log(`\nYou failed to escape and took ${fleeDamage} damage!`)
         } else {
             die()
         }
@@ -288,16 +288,16 @@ function flee() {
 function die() {
     //End loops and send death message
     console.clear()
-    console.log("\x1b[31m%s\x1b[0m", "\nYou were killed by a " + currentEnemy.name + " and failed to protect the village.\n")
+    console.log("\x1b[31m%s\x1b[0m", `\nYou were killed by a ${currentEnemy.name} and failed to protect the village.\n`)
 
     //Show game stats
     console.log("\x1b[33m%s\x1b[0m", "------- Game Stats -------")
-    console.log("Player level: " + level)
-    console.log("Distance walked: " + stepsTaken + " steps")
-    console.log("Enemies killed: " + enemiesKilled)
-    console.log("Damage taken: " + damageTaken)
-    console.log("Damage dealt: " + damageDealt)
-    console.log("Battles fled: " + battlesFled + "\n")
+    console.log(`Player level: ${level}`)
+    console.log(`Distance walked: ${stepsTaken} steps`)
+    console.log(`Enemies killed: ${enemiesKilled}`)
+    console.log(`Damage taken: ${damageTaken}`)
+    console.log(`Damage dealt: ${damageDealt}`)
+    console.log(`Battles fled: ${battlesFled}\n`)
 
     //Prompt player to press button to quit
     console.log("Press [f] to quit")
@@ -312,8 +312,8 @@ function die() {
 function giveReward() {
     //Determine random item and add to inventory
     let rando = Math.floor(Math.random() * items.length)
-    inventoryContent.push("-" + items[rando])
-    console.log("You loot a " + items[rando] + " from the " + currentEnemy.name + "'s corpse.\n")
+    inventoryContent.push(`-${items[rando]}`)
+    console.log(`You loot a ${items[rando]} from the ${currentEnemy.name}'s corpse.\n`)
 
     //Add levels, health, and increase kill count
     level += Math.floor(currentEnemy.level / 2) + 1
@@ -326,14 +326,14 @@ function printPlayerInfo() {
     console.clear()
     console.log(cap)
     console.log("\x1b[32m%s\x1b[0m", name)
-    console.log("Health: " + health)
-    console.log("Lvl. " + level + "\n")
+    console.log(`Health: ${health}`)
+    console.log(`Lvl. ${level} \n`)
     console.log(inventory)
-    for (var i = 0; i < inventoryContent.length; i++) {
+    for (let i = 0; i < inventoryContent.length; i++) {
         console.log(inventoryContent[i])
     }
     console.log(cap)
-    console.log("\nPress [w] to walk or [p] to view inventory")
+    console.log("\nPress [w] to take a step or [p] to view inventory")
 }
 
 function printFightInfo() {
@@ -341,12 +341,12 @@ function printFightInfo() {
     console.clear()
     console.log(cap)
     console.log("\x1b[32m%s\x1b[0m", name)
-    console.log("Health: " + health)
-    console.log("Lvl. " + level)
-    console.log(cap + "\n" + cap)
+    console.log(`Health: ${health}`)
+    console.log(`Lvl. ${level}`)
+    console.log(`${cap}\n${cap}`)
     console.log("\x1b[31m%s\x1b[0m", currentEnemy.name)
-    console.log("Health: " + currentEnemy.health)
-    console.log("Lvl. " + currentEnemy.level)
+    console.log(`Health: ${currentEnemy.health}`)
+    console.log(`Lvl. ${currentEnemy.level}`)
     console.log(cap)
 }
 
@@ -358,7 +358,7 @@ function enemyAttack() {
 
     //Determine if player is killed by hit
     if (health > 0) {
-        console.log(currentEnemy.name + " did " + enemyDamage + " damage to you!")
+        console.log(`${currentEnemy.name} did ${enemyDamage} damage to you!`)
     } else {
         die()
     }

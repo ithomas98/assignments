@@ -151,18 +151,19 @@ printPlayerInfo()
 
 //Main Loop
 while (!isDead) {
-    const choice = readline.keyIn("", { hideEchoBack: true, limit: 'wpd' });
+    readline.setDefaultOptions({limit: ["w", "p", "print", "q", "quit"]});
+    const choice = readline.question("");
 
     if (choice == "w") {
         walk()
     }
 
-    if (choice == "p") {
+    if (choice == "p" || choice == "print") {
         printPlayerInfo()
     }
 
-    if (choice == "d") {
-        console.log("dead")
+    if (choice == "q" || choice == "quit") {
+        console.log("Quitting")
         isDead = true
     }
 
@@ -184,7 +185,7 @@ while (!isDead) {
 function walk() {
     //Determine chance of an enemy attack
     let encounterChance = Math.random();
-    if (encounterChance > .9) {
+    if (encounterChance > .75) {
         let index = Math.floor(Math.random() * enemies.length);
         startFight(enemies[index])
     }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form name="travel">
+            <span class="header">Passenger Information</span><br>
+            <input type="text" name="firstName" placeholder="First Name"><br>
+            <input type="text" name="lastName" placeholder="Last Name"><br>
+            <input type="number" name="age" placeholder="Age"><br>
+            Male: <input type="radio" name="gender" value="Male">
+            Female: <input type="radio" name="gender" value="Female">
+            <br>
+            <br>
+
+            <span class="header">Destination:</span><br>
+            <select name="destination">
+                <option value="New York">New York</option>
+                <option value="London">London</option>
+                <option value="Paris">Paris</option>
+            </select>
+            <br>
+            <br>
+
+            <span class="header">Dietary Restrictions:</span><br>
+            Vegan: <input type="checkbox" name="diet" value="Vegan"><br>
+            Lactose Intolerant: <input type="checkbox" name="diet" value="Lactose Intolerant"><br>
+            Peanut Allergy: <input type="checkbox"  name="diet" value="Peanut Allergy">
+            <br>
+            <br>
+
+            <button>Submit</button>
+        </form>
+        <script src="main.js"></script>
+    </body>
+</html>

@@ -16,12 +16,7 @@ console.log(evensOnly([3, 6, 8, 2])); /// [6, 8, 2
 
 //Task 3
 function fiveCharactersOrFewerOnly(arr) {
-    return arr.filter(function (word) {
-        const letters = word.split("")
-        if (letters.length <= 5) {
-            return word
-        }
-    })
+    return arr.filter(string => string.length < 6)
 }
 // test
 console.log(fiveCharactersOrFewerOnly(["dog", "wolf", "by", "family", "eaten", "camping"])); // ["by", "dog", "wolf", "eaten"]

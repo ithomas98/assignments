@@ -1,0 +1,80 @@
+body {
+    background-color: rgb(29, 29, 29);
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    margin: 40px;
+}
+
+#container {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 99%;
+}
+
+#flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 99%;
+}
+
+#one{
+    transition: background-color 200ms linear 0s, opacity 200ms linear 0s;
+}
+
+#one:hover {
+    background-color: rgb(233, 85, 85);
+    opacity: 25%;
+}
+
+#two{
+    transition: border-radius 200ms ease-in-out 0s, background-color 200ms linear 0s;
+}
+
+#two:hover {
+    background-color: rgb(233, 181, 85);
+    border-radius: 100%;
+}
+
+#three{
+    transition: height 200ms ease-in-out 250ms, width 200ms linear 0s, background-color 200ms linear 0s;
+}
+
+#three:hover {
+    background-color: rgb(231, 233, 85);
+    height: 150px;
+    width: 150px;
+}
+
+#four{
+    transition: transform 200ms ease-in-out 0s, background-color 200ms linear 0s;
+}
+
+#four:hover {
+    background-color: rgb(85, 233, 92);
+    transform: rotate(90deg);
+}
+
+#five{
+    transition: border 500ms ease-in-out 0s, background-color 200ms linear 0s;
+}
+
+#five:hover {
+    background-color: rgb(85, 144, 233);
+    border: 10px solid rgb(85, 144, 233);
+}
+
+#six{
+    transition: transform 250ms ease-in-out 0s, background-color 200ms linear 0s;
+}
+
+#six:hover {
+    background-color: rgb(191, 85, 233);
+    transform: translateY(-25px);
+}

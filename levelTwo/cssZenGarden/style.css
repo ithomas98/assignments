@@ -1,70 +1,245 @@
+/* latin-ext */
+@font-face {
+    font-family: 'Julius Sans One';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/juliussansone/v9/1Pt2g8TAX_SGgBGUi0tGOYEga5WOzHsX2aE.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Julius Sans One';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/juliussansone/v9/1Pt2g8TAX_SGgBGUi0tGOYEga5WOwnsX.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/librebaskerville/v9/kmKhZrc3Hgbbcjq75U4uslyuy4kn0qNcWx8QDP2V.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/librebaskerville/v9/kmKhZrc3Hgbbcjq75U4uslyuy4kn0qNcWxEQDA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/librebaskerville/v9/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNXaxMICA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/librebaskerville/v9/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxM.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+  
+
+
 body{
     margin: 0;
     position: absolute;
+
+    background-image: url(images/bamboo.png);
+    background-attachment: fixed;
+    font-family: 'Libre Baskerville', sans-serif;
+}
+
+h1{
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: 300;
+    font-size: 50px
+}
+
+h2{
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+    font-weight: 100;
+    font-size: 25px
+}
+
+h3{
+    color: #2e484c;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 24pt;
+    font-weight: 500;
+    padding: 0;
+    margin: 40px 0px 0px 0px;
+}
+
+p{
+    font-size: 13.5pt;
+    font-weight: 500;
+    line-height: 35px;
 }
 
 #container{
-    border: 1px solid black;
+    border-top: 12px solid #134347;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
 #header{
-    border: 1px solid black;
-    grid-column: 1/3;
+    height: 298px;
+    background-image: url(images/huntington.jpg);
+    background-size: cover;
+    background-position: center;
+    grid-column: 1/4;
     grid-row: 1;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid white;
+}
+
+#headerBox{
+    border: 1px solid white;
+    grid-column: 2/4;
+}
+
+#swoosh{
+    grid-column: 1/2;
+    max-height: 110px;
+    border: 1px solid white;
+}
+
+#title{
+    border: 1px solid white;
+}
+
+#subtitle{
+    border: 1px solid white;
 }
 
 #headerSide{
-    border: 1px solid black;
     grid-column: 3/4;
     grid-row: 1;
 }
 
 #one{
-    border: 1px solid black;
+    background-color: white;
     grid-column: 1/3;
     grid-row: 2;
+    padding: 53px 70px 53px 125px;
 }
 
 #oneSide{
-    border: 1px solid black;
+    background-color: #e5ede8;
     grid-column: 3/4;
     grid-row: 2;
 }
 
 #two{
-    border: 1px solid black;
-    background-color: #c1dacc;
+    background-color: rgba(138,188,159,0.5);
     grid-column: 1/3;
     grid-row: 3;
+    padding: 53px 70px 53px 125px;
 }
 
 #twoSide{
-    border: 1px solid black;
+    background-color: rgba(138, 188, 159, 0.6);
     grid-column: 3/4;
     grid-row: 3;
 }
 
 #three{
-    border: 1px solid black;
+    background-color: white;
     grid-column: 1/3;
     grid-row: 4;
+    padding: 53px 70px 53px 125px;
 }
 
 #threeSide{
-    border: 1px solid black;
+    background-color: #e5ede8;
     grid-column: 3/4;
     grid-row: 4;
 }
 
 #footer{
-    border: 1px solid black;
+    background-image: url(images/koi.jpg);
+    background-size: cover;
     grid-column: 1/4;
     grid-row: 5;
+    height: 360px;
 }
 
-.main{
-    padding-left: 50px;
-    padding-right: 50px;
+#footerText{
+    padding: 110px 120px 100px 120px;
+    font-size: 27pt;
+    line-height: 70px;
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+    text-align: center;
 }
+
+#name{
+    color: #ffffffce;
+    font-style: normal;
+}
+
+#links{
+    height: 189px;
+    background-color: #134347;
+    grid-column: 1/4;
+    grid-row: 6;
+}
+
+#underline{
+    text-decoration: underline dotted;
+}
+
+#link{
+    color: #0d8ba1;
+}
+
+#download{
+    font-family: 'Julius Sans One', sans-serif;
+    color: #809b7e;
+}
+
+.icons{
+    padding: 2px;
+    color: #a9b995;
+    background: #d9e1cd;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+   
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+   
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+   
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.material-icons.md-18 { font-size: 18px; }

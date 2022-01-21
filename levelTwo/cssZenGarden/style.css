@@ -54,7 +54,7 @@
 }
   
 
-@media only screen and (min-width: 1131px) {
+@media only screen and (min-width: 721px) {
     h1{
         color: white;
         font-family: 'Julius Sans One', sans-serif;
@@ -83,6 +83,10 @@
         font-size: 13.25pt;
         font-weight: 500;
         line-height: 33px;
+    }
+
+    ul{
+        margin: 5% 0% 0% 12%;
     }
 
     li{
@@ -273,7 +277,7 @@
     }
 }
 
-@media only screen and (max-width: 1130px) {
+@media only screen and (max-width: 720px) {
     h1{
         color: white;
         font-family: 'Julius Sans One', sans-serif;

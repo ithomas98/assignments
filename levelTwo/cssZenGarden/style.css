@@ -152,6 +152,7 @@
     #viewAll{
         font-family: 'Julius Sans One', sans-serif;
         font-size: 16pt;
+        white-space: nowrap;
         color: rgba(255,255,255,0.6);
         background-color: rgba(255, 255, 255, 0.082);
         padding: 26px 27%;
@@ -337,7 +338,7 @@
     
     #header{
         border-top: 10px solid #134347;
-        height: 225px;
+        height: 240px;
         background-image: url(images/gridlines.png), url(images/contours-opaque.png), url(images/huntington.jpg);
         background-size: contain, contain, cover;
         background-position: center;
@@ -346,33 +347,29 @@
     }
     
     #headerBox{
-        display: grid;
-        grid-template-columns: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         padding: 0px;
-        margin: 2% 10% 1% 10%;
+        margin: 3% 10% 1% 10%;
     }
     
     #swoosh{
-        max-height: 80px;
-        position: relative;
-        left: 190px;
-        top: 0px;
+        max-height: 50px;
+        margin-top: 7px;
+        margin-bottom: 13px;
     }
     
     #title{
-        grid-column: 2;
-        grid-row: 1;
-        position: relative;
-        bottom: 0px;
-        left: 10px;
+        font-size: 24pt;
+        margin: 0;
     }
     
     #subtitle{
-        grid-column: 2;
-        grid-row: 2;
-        position: relative;
-        bottom: 33px;
-        left: 70px;
+        font-size: 15pt;
+        margin: 0;
+        margin-top: 10px;
     }
     
     #headerSide{
@@ -411,7 +408,7 @@
         background-color: white;
         grid-column: 1;
         grid-row: 3;
-        padding: 20px 110px 20px 110px;
+        padding: 20px 50px 20px 50px;
     }
     
     #oneSide{
@@ -424,7 +421,7 @@
         background-color: rgba(138,188,159,0.5);
         grid-column: 1;
         grid-row: 4;
-        padding: 20px 110px 20px 110px;
+        padding: 20px 50px 20px 50px;
     }
     
     #twoSide{
@@ -460,7 +457,7 @@
         background-color: white;
         grid-column: 1;
         grid-row: 5;
-        padding: 20px 110px 20px 110px;
+        padding: 20px 50px 20px 50px;
     }
     
     #threeSide{
@@ -500,12 +497,11 @@
 
     #linksBox{
         height: 100%;
-        width: 42%;
-        margin-left: 29%;
+        width: 100%;
         font-family: "verdemoderna";
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-evenly;
     }
     
     #social{

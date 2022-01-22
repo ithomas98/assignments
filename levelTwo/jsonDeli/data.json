@@ -1,0 +1,62 @@
+{
+    "appetizers": [
+        {
+            "name": "Salad",
+            "ingredients": ["Lettuce", "Tomatoes", "Dressing"],
+            "about": "A plain salad"
+        },
+        {
+            "name": "French Fries",
+            "ingredients": ["Potatoes", "Salt"],
+            "about": "Some plain Fries"
+        }
+    ],
+    "cold sandwiches": [
+        {
+            "name": "BLT",
+            "ingredients": ["Lettuce", "Tomatoes", "Bacon"],
+            "about": "A pretty decent sandwich"
+        },
+        {
+            "name": "Club Sandwich",
+            "ingredients": ["Turkey", "Lettuce", "Tomatoes"],
+            "about": "A cold club sandwich"
+        }
+    ],
+    "hot sandwiches": [
+        {
+            "name": "Cheesesteak",
+            "ingredients": ["Steak", "Cheese"],
+            "about": "A hot Cheesesteak"
+        },
+        {
+            "name": "Chicken Sandwich",
+            "ingredients": ["Chicken", "Lettuce", "Tomatoes"],
+            "about": "A crispy chicken sandwich"
+        }
+    ],
+    "desserts": [
+        {
+            "name": "Brownie",
+            "ingredients": ["Chocolate", "Chocolate Chips"],
+            "about": "A double chocolate brownie"
+        },
+        {
+            "name": "Banana Split",
+            "ingredients": ["Banana", "Ice Cream", "Cherries"],
+            "about": "A normal banana split"
+        }
+    ],
+    "drinks": [
+        {
+            "name": "Lemonade",
+            "ingredients": ["Lemons", "Water"],
+            "about": "Pretty much just lemon water"
+        },
+        {
+            "name": "Chocolate Milk",
+            "ingredients": ["Milk", "Cocoa Powder"],
+            "about": "Creamy Chocolate Milk"
+        }
+    ]
+}

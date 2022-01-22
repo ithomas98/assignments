@@ -70,6 +70,10 @@ function unshift(array, ...nums) {
     return [...nums, ...array];
 }
 
+const array = [1, 2, 3]
+
+console.log(unshift(array, 4, 5, 6))
+
 
 //Task 9
 function populatePeople(names){
@@ -79,7 +83,7 @@ function populatePeople(names){
         const [firstName, lastName] = name
 
         return {
-            name
+            firstName, lastName
         }
     })
 }

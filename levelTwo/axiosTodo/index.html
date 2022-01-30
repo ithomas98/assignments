@@ -13,14 +13,17 @@
     </head>
     <body>
         <div id="head">to do</div>
-        <span class="material-icons md-36">add_circle_outline</span>
-        <form name="newItem" id="form">
-            <input name="title" placeholder="Title"><br>
-            <input type="number" name="price" placeholder="Price"><br>
-            <input name="description" placeholder="Description"><br>
-            <button>Create</button>
-        </form>
-        <div id="todoList"></div>
+        <div id="container">
+            <div id="todoList"></div>
+            <form name="newItem" id="form">
+                <input name="title" placeholder="Title"><br>
+                <input type="number" name="price" placeholder="Price"><br>
+                <input name="description" placeholder="Description"><br>
+                <input name="imgUrl" placeholder="Image URL"><br>
+                <button>Done</button>
+            </form>
+            <span class="material-icons md-36 btn" id="newBtn">add_circle_outline</span><br>    
+        </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
         <script src="app.js"></script>
     </body>

@@ -1,38 +1,106 @@
 body{
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     color: #121212;
     margin: 0;
     font-family: 'Poppins', sans-serif;
 }
 
+p{
+    margin: 0;
+    padding: 0;
+}
+
+input{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    color: black;
+    border: none;
+}
+
+input[type=checkbox] {
+    transform: scale(1.25);
+}
+
+button{
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    transition: background-color 200ms ease-in-out 0s;
+}
+
+button:hover{
+    background-color: rgb(128, 128, 128);
+}
+
+form{
+    margin-top: 20px;
+    display: none;
+}
 
 #head{
     font-size: 3em;
-    background-color: rgb(212, 90, 90);
+    background-color: #0075FF;
     color: #FFFFFF;
     text-align: center;
+    margin-bottom: 50px;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #todoList{
     display: flex;
     flex-direction: column;
     align-items: left;
-    position: absolute;
-    left: 30%;
-    width: 40%;
 }
 
-.item{
-    border: 1px solid red;
+#newBtn{
+    margin-top: 20px;
 }
 
 .title{
     font-size: 1.75em;
+    padding-left: 15px;
+}
+
+.price{
+    font-style: italic;
+    margin: 0;
+}
+
+.description{
+    margin: 0;
+}
+
+.img{
+    max-width: 100px;
 }
 
 .completed{
     text-decoration: line-through;
     font-size: 1.75em;
+    padding-left: 15px;
+    color: grey;
+}
+
+.btn{
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    color: grey;
+    transition: transform 200ms ease-in-out 0s;
+}
+
+.btn:hover{
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    transform: rotate(90deg);
 }
 
 .material-icons {

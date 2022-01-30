@@ -1,8 +1,11 @@
+const newBtn = document.getElementById("newBtn")
+newBtn.addEventListener("click", createNewItem)
+
 const form = document.newItem
 form.addEventListener("submit", function (e) {
     e.preventDefault()
     addItem()
-
+    resetForm()
 })
 
 getData()
@@ -15,7 +18,6 @@ function getData() {
 
 function showData(data) {
     clearItems()
-
     for (let i = 0; i < data.length; i++) {
         createItem(data[i])
     }
@@ -37,9 +39,13 @@ function createItem(item) {
     //Add Checkbox
     const checkbox = document.createElement("input")
     checkbox.setAttribute("type", "checkbox")
-    checkbox.addEventListener("change", function () {
-        completeItem(item)
-        title.setAttribute("class", "completed")
+    checkbox.addEventListener("input", function () {
+        if (item.completed == false) {
+            title.setAttribute("class", "completed")
+        } else {
+            title.setAttribute("class", "title")
+        }
+        updateItem(item)
     })
     newItem.appendChild(checkbox);
 
@@ -49,9 +55,33 @@ function createItem(item) {
     title.textContent = item.title
     newItem.appendChild(title)
 
+    //Add Price
+    if(item.price != null){
+        const price = document.createElement("p")
+        price.classList.add("price")
+        price.textContent = `$${item.price}`
+        newItem.appendChild(price)
+    }
+
+    //Add Description
+    if(item.description != null){
+        const description = document.createElement("p")
+        description.classList.add("description")
+        description.textContent = item.description
+        newItem.appendChild(description)
+    }
+
+    //Add Image
+    if(item.imgUrl != ""){
+        const img = document.createElement("img")
+        img.classList.add("img")
+        img.src = item.imgUrl
+        newItem.appendChild(img)
+    }
+
     //Add Clear button
-    const clearBtn = document.createElement("button")
-    clearBtn.innerText = "Delete"
+    const clearBtn = document.createElement("p")
+    clearBtn.innerHTML = "<span class='material-icons btn'>clear</span>"
     clearBtn.addEventListener("click", function () {
         removeItem(item)
     })
@@ -68,7 +98,8 @@ function addItem() {
     const newItem = {
         title: form.title.value,
         description: form.description.value,
-        price: form.price.value
+        price: form.price.value,
+        imgUrl: form.imgUrl.value
     }
 
     axios.post("https://api.vschool.io/isaacthomas/todo", newItem)
@@ -82,12 +113,29 @@ function removeItem(item) {
         .catch(err => console.log(err))
 }
 
-function completeItem(item) {
-    const completedItem = {
-        completed: true
-    }
+function updateItem(item) {
+    const completedItem = { completed: true }
+    const unfinishedItem = { completed: false }
 
-    axios.put(`https://api.vschool.io/isaacthomas/todo/${item._id}`, completedItem)
-        .then(res => getData())
-        .catch(err => console.log(err))
+    if (item.completed) {
+        axios.put(`https://api.vschool.io/isaacthomas/todo/${item._id}`, unfinishedItem)
+            .then(res => getData())
+            .catch(err => console.log(err))
+    } else {
+        axios.put(`https://api.vschool.io/isaacthomas/todo/${item._id}`, completedItem)
+            .then(res => getData())
+            .catch(err => console.log(err))
+    }
+}
+
+function createNewItem() {
+    form.style.display = "block"
+}
+
+function resetForm(){
+    form.style.display = "none"
+    form.title.value = ""
+    form.price.value = ""
+    form.description.value = ""
+    form.imgUrl.value = ""
 }

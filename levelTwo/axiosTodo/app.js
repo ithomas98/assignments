@@ -1,5 +1,5 @@
 const newBtn = document.getElementById("newBtn")
-newBtn.addEventListener("click", createNewItem)
+newBtn.addEventListener("click", openNewItemMenu)
 
 const form = document.newItem
 form.addEventListener("submit", function (e) {
@@ -87,7 +87,7 @@ function createItem(item) {
     })
     newItem.appendChild(clearBtn);
 
-    //If the item is completed, display with a strikethrough and checked box
+    //If the item is completed, strikethrough and check the box
     if (item.completed) {
         title.setAttribute("class", "completed")
         checkbox.checked = true;
@@ -128,11 +128,13 @@ function updateItem(item) {
     }
 }
 
-function createNewItem() {
+function openNewItemMenu() {
     form.style.display = "block"
+    newBtn.style.display = "none"
 }
 
 function resetForm(){
+    newBtn.style.display = "block"
     form.style.display = "none"
     form.title.value = ""
     form.price.value = ""

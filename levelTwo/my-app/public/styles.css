@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar{
+    display: flex;
+    margin: 2% 10% 2% 10%;
+}
+
+.start{
+    margin-right: auto;
+    color: white;
+    font-size: 20pt;
+    font-weight: bold;
+    z-index:99;
+}
+
+.links{
+    color: white;
+    padding-top: 10px;
+    font-weight: bold;
+    z-index:99;
+}
+
+.navlink{
+    padding: 20px;
+}
+
+.header{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    height: 800px;
+    width: 100%;
+    color: white;
+    background-image: url("https://startbootstrap.github.io/startbootstrap-clean-blog/assets/img/home-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title{
+    font-size: 90px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.subtitle{
+    margin-top: 10px;
+    font-weight: 100;
+}
+
+.blogList{
+    position: relative;
+    top: 710px;
+    margin: 5% 25% 5% 25%;
+}
+
+.post--title{
+    font-weight: bolder;
+}
+
+.post--subtitle{
+    font-weight: 100;
+    font-size: 20pt;
+    color: rgb(117, 117, 117);
+}

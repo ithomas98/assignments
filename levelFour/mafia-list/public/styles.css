@@ -1,0 +1,40 @@
+.headerBar{
+    background-color: rgb(54, 54, 54);
+    color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hitlist{
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    justify-items: center;
+}
+
+.person{
+    background-color: rgb(54, 54, 54);
+    width: 350px;
+    height: 400px;
+    position: relative;
+}
+
+.person--img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.person--name{
+    background-color: rgb(54, 54, 54);
+    padding-top: 20px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    height: 15%;
+}

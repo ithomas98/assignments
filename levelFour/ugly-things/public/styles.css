@@ -1,0 +1,88 @@
+body{
+    background-color: whitesmoke;
+}
+
+h3{
+    color: grey;
+}
+
+.title{
+    background-color: rgb(231, 139, 139);
+    color: white;
+    font-weight: bolder;
+    font-size: 2rem;
+    padding: 10px;
+    text-align: center;
+}
+
+.myForm{
+    background-color: rgb(231, 139, 139);
+    padding: 50px;
+    text-align: center;
+}
+
+.myForm--input{
+    border: none;
+    padding: 5px;
+    margin: 10px;
+}
+
+.myForm--btn{
+    background-color: white;
+    color: rgb(231, 139, 139);
+    font-weight: bolder;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card{
+    border: 5px solid rgb(216, 216, 216);
+    border-radius: 10px;
+    width: 400px;
+    height: 450px;
+    margin: auto;
+}
+
+.card--img{
+    max-height: 225px;
+    margin: 25px;
+    margin-bottom: 0;
+}
+
+.card--btn{
+    background-color: rgb(231, 139, 139);
+    color: white;
+    font-weight: bolder;
+    border: none;
+    padding: 5px;
+    width: 80px;
+    margin: 15px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.editcard--img{
+    margin-top: 50px;
+}
+
+@media only screen and (max-width: 2000px){
+    .cardList{
+        margin: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 3rem;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 2001px){
+    .cardList{
+        margin: 5rem 25rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 3rem;
+        text-align: center;
+    }
+}

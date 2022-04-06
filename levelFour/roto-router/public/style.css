@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(59, 59, 59);
+    color: whitesmoke;
+}
+
+main{
+    padding: .5rem 15% 0rem 15%;
+    height: auto;
+}
+
+nav{
+    padding-bottom: 1rem;
+}
+
+h1{
+    margin: 0;
+    padding: 30px;
+    background-color: rgb(50, 50, 50);
+}
+
+nav{
+    background-color: rgb(50, 50, 50);
+    padding-bottom: 20px;
+
+}
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    margin: 15px;
+}
+
+a:link {
+    color: rgb(189, 189, 189);
+}
+  
+a:visited {
+    color: rgb(131, 131, 131);
+}
+  
+a:hover {
+    color: rgb(189, 189, 189);
+}
+  
+a:active {
+    color: rgb(92, 92, 92);
+}
+
+#footer{
+    background-color: rgb(50, 50, 50);
+    color: rgb(196, 196, 196);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    padding-top: 20px ;
+}
